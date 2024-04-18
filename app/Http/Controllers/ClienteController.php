@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ClienteController extends Controller
 {
-    public function cadastrarCliente( )
+    public function ListaCliente( )
     {
         $cliente = Cliente::all();
         $clienteComImagem = $cliente->map(function ($cliente) {
@@ -25,7 +25,7 @@ class ClienteController extends Controller
         });
         return response()->json($clienteComImagem);
     }
-    public function ListaCliente(ClienteFormRequest $request)
+    public function cadastrarCliente(Request $request)
     {
         $clienteData = $request->all();
     
